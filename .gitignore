@@ -1,0 +1,29 @@
+# Byte-compiled and cached files
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Environments and packaging
+.venv/
+venv/
+build/
+dist/
+
+# Test and quality tools
+.coverage
+coverage.xml
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+
+# Local configuration and reports
+.env
+.env.*
+!.env.example
+secrettrace-report*.json

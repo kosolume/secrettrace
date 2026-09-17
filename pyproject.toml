@@ -1,0 +1,74 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "secrettrace"
+version = "0.1.0"
+description = "Offline-first CLI scanner for detecting exposed secrets in source-code repositories."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+authors = [{ name = "John Kwegyir-Paintsil" }]
+keywords = ["security", "secrets", "devsecops", "scanner", "cli"]
+classifiers = [
+  "Development Status :: 2 - Pre-Alpha",
+  "Environment :: Console",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Security",
+]
+dependencies = [
+  "typer>=0.12,<1",
+]
+
+[project.optional-dependencies]
+dev = [
+  "mypy>=1.11,<2",
+  "pytest>=8.3,<9",
+  "pytest-cov>=5,<7",
+  "ruff>=0.7,<1",
+]
+
+[project.scripts]
+secrettrace = "secrettrace.cli:app"
+
+[project.urls]
+Homepage = "https://github.com/jpaintsil-neu/secrettrace"
+Repository = "https://github.com/jpaintsil-neu/secrettrace"
+Issues = "https://github.com/jpaintsil-neu/secrettrace/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/secrettrace"]
+
+[tool.pytest.ini_options]
+addopts = "--strict-config --strict-markers --cov=secrettrace --cov-report=term-missing"
+testpaths = ["tests"]
+
+[tool.coverage.run]
+branch = true
+source = ["secrettrace"]
+
+[tool.coverage.report]
+fail_under = 85
+show_missing = true
+skip_covered = true
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "S", "SIM"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S101"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+packages = ["secrettrace"]
+mypy_path = "src"
