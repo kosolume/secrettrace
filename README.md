@@ -80,13 +80,13 @@ The `scan` command is reserved in the CLI but intentionally reports that the det
 
 ```text
 secrettrace/
-├── src/secrettrace/        # Application package
-├── tests/                  # Unit and integration tests
-├── docs/                   # Architecture and security decisions
-├── examples/               # Synthetic demonstrations only
-├── .github/workflows/      # Continuous integration
-├── pyproject.toml          # Packaging and tool configuration
-└── .secrettrace.yml        # Example project configuration
+├── src/secrettrace/        
+├── tests/                  
+├── docs/                   
+├── examples/               
+├── .github/workflows/      
+├── pyproject.toml          
+└── .secrettrace.yml        
 ```
 
 ## Quality gates
