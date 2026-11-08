@@ -10,7 +10,7 @@ SecretTrace is an offline-first command-line security scanner for finding potent
 
 ## Why I am building it
 
-Secret scanning is not only a pattern-matching problem. A useful scanner must balance detection coverage against false positives while ensuring the scanner itself does not leak the values it finds. This project explores that engineering problem through an explainable, privacy-conscious pipeline suitable for local development and CI.
+Secret scanning is not only a pattern-matching problem. A useful scanner must balance detection coverage against false positives while ensuring it doesn't leak the values it finds. This project explores that engineering problem through an explainable, privacy-conscious pipeline suitable for local development and CI.
 
 ## Planned v1.0 capabilities
 
